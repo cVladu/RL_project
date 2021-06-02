@@ -1,0 +1,121 @@
+{
+  "agent": [
+    {
+      "name": "REINFORCE_wow",
+      "algorithm": {
+        "name": "Reinforce",
+        "action_pdtype": "Categorical",
+        "action_policy": "epsilon_greedy",
+        "center_return": true,
+        "explore_var_spec": {
+          "name": "linear_decay",
+          "start_value": 1.0,
+          "end_val": 0.01,
+          "start_step": 0,
+          "end_step": 50000
+        },
+        "gamma": 0.9,
+        "entropy_coef_spec": {
+          "name": "linear_decay",
+          "start_val": 0.01,
+          "end_val": 0.001,
+          "start_step": 0,
+          "end_step": 20000
+        },
+        "training_frequency": 1
+      },
+      "memory": {
+        "name": "OnPolicyReplay"
+      },
+      "net": {
+        "type": "ConvNet",
+        "shared": true,
+        "conv_hid_layers": [
+          [
+            32,
+            7,
+            4,
+            0,
+            1
+          ],
+          [
+            64,
+            5,
+            2,
+            0,
+            1
+          ],
+          [
+            32,
+            5,
+            1,
+            0,
+            1
+          ]
+        ],
+        "fc_hid_layers": 32,
+        "hid_layers_activation": "relu",
+        "out_layer_activation": "tanh",
+        "init_fn": null,
+        "normalize": true,
+        "batch_norm": true,
+        "clip_grad_val": 1.0,
+        "loss_spec": {
+          "name": "MSELoss"
+        },
+        "optim_spec": {
+          "name": "Adam",
+          "lr": 0.03
+        },
+        "lr_scheduler_spec": {
+          "name": "StepLR",
+          "step_size": 30,
+          "gamma": 0.1
+        },
+        "update_type": "replace",
+        "update_frequency": 1000,
+        "gpu": true,
+        "lr": 0.06359564665501836,
+        "gamma": -0.03807405767641825,
+        "cuda_id": 0
+      }
+    }
+  ],
+  "env": [
+    {
+      "name": "WizardOfWor-v0",
+      "max_t": null,
+      "max_frame": 100000,
+      "frame_op": "concat",
+      "frame_op_len": 4,
+      "reward_scale": "sign",
+      "num_envs": 16
+    }
+  ],
+  "body": {
+    "product": "outer",
+    "num": 1
+  },
+  "meta": {
+    "distributed": false,
+    "eval_frequency": 5000,
+    "max_session": 4,
+    "max_trial": 10,
+    "rigorous_eval": 0,
+    "experiment": 0,
+    "trial": 1,
+    "session": 1,
+    "cuda_offset": 0,
+    "resume": false,
+    "experiment_ts": "2021_06_02_172815",
+    "prepath": "data/reinforce_wizardOfWor_2021_06_02_172815/reinforce_wizardOfWor_t1_s1",
+    "git_sha": "a31aefc43fd1ab5e531676d86e5dd2e25c4f7101",
+    "random_seed": 1622756183,
+    "graph_prepath": "data/reinforce_wizardOfWor_2021_06_02_172815/graph/reinforce_wizardOfWor_t1_s1",
+    "info_prepath": "data/reinforce_wizardOfWor_2021_06_02_172815/info/reinforce_wizardOfWor_t1_s1",
+    "log_prepath": "data/reinforce_wizardOfWor_2021_06_02_172815/log/reinforce_wizardOfWor_t1_s1",
+    "model_prepath": "data/reinforce_wizardOfWor_2021_06_02_172815/model/reinforce_wizardOfWor_t1_s1"
+  },
+  "name": "reinforce_wizardOfWor",
+  "trial_index": 1
+}
