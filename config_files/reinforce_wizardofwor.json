@@ -1,5 +1,5 @@
 {
-  "reinforce_wizardOfWar": {
+  "reinforce_wizardOfWor": {
     "agent": [{
       "name": "REINFORCE_wow",
       "algorithm": {
