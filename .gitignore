@@ -168,7 +168,7 @@ Thumbs.db
 
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -183,5 +183,4 @@ Thumbs.db
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,python
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
-**/SLM-lab/*
-**/notes/*
+SLM-lab/
