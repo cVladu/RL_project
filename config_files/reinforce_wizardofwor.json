@@ -84,7 +84,7 @@
           "fc_hid_layers__choice": [128, 64, 32],
           "batch_norm__choice": [true, false],
           "lr__uniform": [0.001, 0.05],
-          "gamma__normal": [0.8, 1]
+          "gamma__choice": [0, 0.9, 0.99, 1]
         }
       }]
     }
