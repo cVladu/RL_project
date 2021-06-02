@@ -62,7 +62,11 @@
     "env": [{
       "name": "WizardOfWor-v0",
       "max_t": null,
-      "max_frame": 100000
+      "max_frame": 100000,
+      "frame_op": "concat",
+      "frame_op_len": 4,
+      "reward_scale": "sign",
+      "num_envs": 16
     }],
     "body": {
       "product": "outer",
