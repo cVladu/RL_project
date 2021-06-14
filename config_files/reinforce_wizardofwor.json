@@ -78,9 +78,6 @@
       "agent": [{
         "algorithm": {
           "name__grid_search": ["Reinforce", "SARSA"]
-        },
-        "memory":{
-          "name__grid_search": ["Replay", "PrioritizedReplay"]
         }
       }]
     }
